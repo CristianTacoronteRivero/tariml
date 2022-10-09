@@ -17,6 +17,9 @@ Cristian Tacoronte Rivero <cristiantr.develop@gmail.com/tacoronteriverocristian@
    :maxdepth: 2
    :caption: Contents:
 
+   instalacion
+   ejemplo
+
 
 Indices and tables
 ==================
