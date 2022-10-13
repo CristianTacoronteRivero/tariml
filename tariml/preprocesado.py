@@ -12,7 +12,7 @@ def suma(a,b):
     return a+b
 
 def resta(a,b):
-    """Funcion que resta dos numeros
+    """Funcion 2 que resta dos numeros
 
     :param a: Primer numero
     :type a: int, float, complex
