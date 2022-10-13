@@ -17,7 +17,7 @@ release = '10/10/2022'
 # a ver si esto funciona ya!
 extensions = [
     'sphinx.ext.autodoc',
-    'autoapi.extension',
+    'autoapi.extension'
 ]
 
 autoapi_type = 'python'
