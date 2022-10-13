@@ -8,6 +8,10 @@ def suma(a,b):
 
     :return: Resultado de la suma
     :rtype: int, float, complex
+
+    >>> from tariml.preprocesado import resta
+    >>> suma(5,5)
+    10
     """
     return a+b
 
@@ -22,8 +26,8 @@ def resta(a,b):
     :return: Resultado de la resta
     :rtype: int, float, complex
 
-    >>>from tariml.preprocesado import resta
-    >>>resta(5,5)
+    >>> from tariml.preprocesado import resta
+    >>> resta(5,5)
     0
     """
     return a-b
