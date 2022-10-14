@@ -3,8 +3,6 @@ Resumen modulo bla bla bla para evitar error pylint
 """
 from typing import Union
 VarNum = Union[int, float, complex]
-
-
 def suma(number_a: VarNum, number_b: VarNum) -> VarNum:
     """Descripcion 1
     :param number_a: Primer numero
@@ -20,8 +18,6 @@ def suma(number_a: VarNum, number_b: VarNum) -> VarNum:
     10
     """
     return number_a+number_b
-
-
 def resta(number_a: VarNum, number_b: VarNum) -> VarNum:
     """Funcion 2 que resta dos numeros
 
