@@ -1,8 +1,8 @@
-name: Building # Nombre del workflow
+name: Building v+ # Nombre del workflow
 on:
   push: # FILTRO
     tags: # donde el tags contiene la siguiente expresion regular
-      - "v.+" # solo se ejecuta si el tag comienza con v...
+      - "v*.*.*" # solo se ejecuta si el tag comienza con v...
 # on: [push]
 jobs: # jobs 1
   building:
