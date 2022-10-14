@@ -15,7 +15,9 @@ def suma(number_a: VarNum, number_b: VarNum) -> VarNum:
     >>> suma(5,5)
     10
     """
-    return number_a+number_b
+    return number_a + number_b
+
+
 def resta(number_a: VarNum, number_b: VarNum) -> VarNum:
     """Funcion 2 que resta dos numeros
 
@@ -31,4 +33,4 @@ def resta(number_a: VarNum, number_b: VarNum) -> VarNum:
     >>> resta(5,5)
     0
     """
-    return number_a-number_b
+    return number_a - number_b
