@@ -1,0 +1,25 @@
+name: Building # Nombre del workflow
+on:
+  push: # FILTRO
+    tags: # donde el tags contiene la siguiente expresion regular
+      - "v*" # solo se ejecuta si el tag comienza con v...
+
+jobs: # jobs 1
+  building:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # duplicamos el repositorio que estamos subiendp
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+      - name: Install dependencies
+        run: poetry install
+      # - name: Testing
+      #   run: poetry run pytest
+      - run: poetry build # Ejecuto un comando de consola en el repo.
+      - name: Publish to GH Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ github.workspace }}/dist/*
