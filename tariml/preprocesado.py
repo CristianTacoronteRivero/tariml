@@ -1,10 +1,13 @@
-def suma(a,b):
-    """Descripcion 1
+"""
+Resumen modulo bla bla bla para evitar error pylint
+"""
 
-    :param a: Primer numero
-    :type a: int, float, complex
-    :param b: Segundo numero
-    :type b: int, float, complex
+def suma(number_a,number_b):
+    """Descripcion 1
+    :param number_a: Primer numero
+    :type number_a: int, float, complex
+    :param number_b: Segundo numero
+    :type number_b: int, float, complex
 
     :return: Resultado de la suma
     :rtype: int, float, complex
@@ -13,15 +16,14 @@ def suma(a,b):
     >>> suma(5,5)
     10
     """
-    return a+b
-
-def resta(a,b):
+    return number_a+number_b
+def resta(number_a,number_b):
     """Funcion 2 que resta dos numeros
 
-    :param a: Primer numero
-    :type a: int, float, complex
-    :param b: Segundo numero
-    :type b: int, float, complex
+    :param number_a: Primer numero
+    :type number_a: int, float, complex
+    :param number_b: Segundo numero
+    :type number_b: int, float, complex
 
     :return: Resultado de la resta
     :rtype: int, float, complex
@@ -30,4 +32,4 @@ def resta(a,b):
     >>> resta(5,5)
     0
     """
-    return a-b
+    return number_a-number_b
