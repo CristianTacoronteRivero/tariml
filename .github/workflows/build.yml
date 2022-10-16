@@ -28,7 +28,7 @@ jobs: # jobs 1
           path: java-junit.xml
           reporter: java-junit
       - name: Publish to GH Releases
-        if: startwith(github.ref, 'refs/tags/v')
+        if: startswith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/dist/* # subo todo lo que esta dentro del dist!
