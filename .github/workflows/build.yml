@@ -4,22 +4,31 @@ on:
     tags: # donde el tags contiene la siguiente expresion regular
       - 'v**' # solo se ejecuta si el tag comienza con v...
 # on: [push]
+
 jobs: # jobs 1
   building:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # duplicamos el repositorio que estamos subiendp
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4 # montamos python
         with:
-          python-version: '3.10'
+          python-version: '3.10' # con esta version
       - name: Install Poetry
         uses: snok/install-poetry@v1
       - name: Install dependencies
-        run: poetry install
-      - name: Testing
-        run: poetry run pytest
-      - run: poetry build # Ejecuto un comando de consola en el repo.
+        run: poetry install # instalamos poetry
+      - name: Test pytest
+        run: poetry run pytest --junitxml=jest-junit.xml
+      - run: poetry build # si funciona el testing creo la dist y lo lanzo!
+      - name: Test report # comenzamos con el testing
+        uses: dorny/test-reporter@v1
+        if: succes() || failure()
+        with:
+          name: Test
+          path: java-junit.xml
+          reporter: java-junit
       - name: Publish to GH Releases
+        if: startwith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ github.workspace }}/dist/*
+          files: ${{ github.workspace }}/dist/* # subo todo lo que esta dentro del dist!

@@ -3,7 +3,9 @@ Resumen modulo bla bla bla para evitar error pylint
 """
 from typing import Union
 
-VarNum = Union[int, float, complex]
+VarNum = Union[
+    int, float, complex
+]  # ESO APARECE EN LA DOCUMENTACION Y NO ME GUSTA COMO SE VE
 
 
 def suma(number_a: VarNum, number_b: VarNum) -> VarNum:
