@@ -16,8 +16,8 @@ jobs: # jobs 1
         uses: snok/install-poetry@v1
       - name: Install dependencies
         run: poetry install
-      # - name: Testing
-      #   run: poetry run pytest
+      - name: Testing
+        run: poetry run pytest
       - run: poetry build # Ejecuto un comando de consola en el repo.
       - name: Publish to GH Releases
         uses: softprops/action-gh-release@v1
