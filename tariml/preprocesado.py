@@ -12,8 +12,10 @@ def suma(number_a: VarNum, number_b: VarNum) -> VarNum:
     :type number_a: int, float, complex
     :param number_b: Segundo numero
     :type number_b: int, float, complex
+
     :return: Resultado de la suma
     :rtype: int, float, complex
+
     >>> from tariml.preprocesado import resta
     >>> suma(5,5)
     10
