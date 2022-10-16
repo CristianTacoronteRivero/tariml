@@ -22,7 +22,7 @@ jobs: # jobs 1
       - run: poetry build # si funciona el testing creo la dist y lo lanzo!
       - name: Test report # comenzamos con el testing
         uses: dorny/test-reporter@v1
-        if: succes() || failure()
+        if: success() || failure()
         with:
           name: Test
           path: java-junit.xml
