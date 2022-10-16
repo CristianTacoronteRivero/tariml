@@ -8,6 +8,7 @@ VarNum = Union[int, float, complex]
 
 def suma(number_a: VarNum, number_b: VarNum) -> VarNum:
     """Descripcion 1
+
     :param number_a: Primer numero
     :type number_a: int, float, complex
     :param number_b: Segundo numero
