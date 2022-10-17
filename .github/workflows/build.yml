@@ -27,7 +27,7 @@ jobs: # jobs 1
           name: Test
           path: jest-junit.xml
           reporter: java-junit
-      - name: Upload coverage to Codecov
+      # - name: Upload coverage to Codecov
       - name: Poetry build
         run: poetry build # si funciona el testing creo la dist y lo lanzo!
       - name: Publish to GitHub
