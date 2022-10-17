@@ -18,7 +18,7 @@ jobs: # jobs 1
       - name: Install dependencies
         run: poetry install # instalamos poetry
       - name: Test pytest
-        run: poetry run pytest --junitxml=jest-junit.xml
+        run: poetry run pytest --junitxml=jest-junit.xml --cov=modeltools --cov-report=lcov --cov-report=xml
       - run: poetry build # si funciona el testing creo la dist y lo lanzo!
       - name: Test report # comenzamos con el testing
         uses: dorny/test-reporter@v1
@@ -27,6 +27,13 @@ jobs: # jobs 1
           name: Test
           path: jest-junit.xml
           reporter: java-junit
+      - name: Report coverage
+        uses: devmasx/coverage-check-action@v1.2.0
+        with:
+          type: lcov
+          result_path: coverage.lcov
+          min_coverage: 50
+          token: ${{ github.token }}
       - name: Publish to GH Releases
         if: startswith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
