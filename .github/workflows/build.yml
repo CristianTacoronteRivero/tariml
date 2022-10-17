@@ -18,7 +18,8 @@ jobs: # jobs 1
       - name: Install dependencies
         run: poetry install # instalamos poetry
       - name: Test pytest
-        run: poetry run pytest --junitxml=jest-junit.xml --cov=modeltools --cov-report=lcov --cov-report=xml
+        run: poetry run pytest --junitxml=jest-junit.xml --collect:"XPlat Code Coverage" --results-directory ./coverage
+
       - run: poetry build # si funciona el testing creo la dist y lo lanzo!
       - name: Test report # comenzamos con el testing
         uses: dorny/test-reporter@v1
@@ -30,7 +31,15 @@ jobs: # jobs 1
       - name: Code Coverage Summary Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
-          filename: coverage.xml
+          filename: coverage/**/coverage.cobertura.xml
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: true
+          indicators: true
+          output: both
+          thresholds: '60 80'
       - name: Publish to GH Releases
         if: startswith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
