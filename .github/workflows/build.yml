@@ -27,12 +27,11 @@ jobs: # jobs 1
           name: Test
           path: jest-junit.xml
           reporter: java-junit
-      - name: Report coverage
-        uses: devmasx/coverage-check-action@v1.2.0
+      - uses: devmasx/coverage-check-action@v1.2.0
         with:
           type: lcov
           result_path: coverage.lcov
-          min_coverage: 50
+          min_coverage: 90
           token: ${{ github.token }}
       - name: Publish to GH Releases
         if: startswith(github.ref, 'refs/tags/v')
