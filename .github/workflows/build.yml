@@ -28,7 +28,7 @@ jobs: # jobs 1
           name: Test
           path: jest-junit.xml
           reporter: java-junit
-      - name: Code Coverage Summary Report
+      - name: Code Coverage Summary Report v2
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
           filename: coverage/**/coverage.cobertura.xml
