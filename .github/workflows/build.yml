@@ -23,7 +23,7 @@ jobs: # jobs 1
         run: poetry install # instalamos poetry y todas las dependencias que hemos ido metiendo
 
       - name: Run pytest and  generate coverage file
-        run: poetry run pytest --junitxml=jest-junit.xml --cov=tariml --cov-report=xml --cov-report=lcov # --cov en la carpeta tariml
+        run: poetry run pytest --junitxml=jest-junit.xml --cov=. --cov-report=xml --cov-report=lcov # --cov en la carpeta tariml
 
       - name: Test report # comenzamos con el testing
         uses: dorny/test-reporter@v1
