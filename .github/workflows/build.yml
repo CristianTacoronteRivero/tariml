@@ -39,7 +39,7 @@ jobs: # jobs 1
           type: lcov
           resul_path: coverage.lcov
           min_coverage: 80
-          token: ${{ githb.token}}
+          token: ${{ github.token}}
 
       - name: Poetry build
         run: poetry build # si funciona el testing creo la dist y lo lanzo!
