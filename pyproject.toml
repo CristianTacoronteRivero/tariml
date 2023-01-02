@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tariml"
-version = "0.1.2"
+version = "3.0.0"
 description = ""
 authors = ["CristianTacoronteRivero <cristiantr.develop@gmail.com>"]
 readme = "README.md"
@@ -19,7 +19,6 @@ pylint = "^2.15.4"
 pre-commit = "^2.20.0"
 mypy = "^0.982"
 pytest-cov = "^4.0.0"
-modeltools = "^0.0.2"
 
 [build-system]
 requires = ["poetry-core"]
